@@ -49,7 +49,7 @@ public static partial class Parser
             // 尝试提高可读性
             StringBuilder apiBuilder = new();
             apiBuilder.Append($"support_multi_audio=true&from_client=BROWSER&avid={aid}&cid={cid}&fnval=4048&fnver=0&fourk=1");
-            if (Config.AREA != "") apiBuilder.Append($"&access_key={Config.TOKEN}&area={Config.AREA}");
+            if (Config.AREA != "") apiBuilder.Append($"&access_key={Config.TOKEN}");
             apiBuilder.Append($"&otype=json&qn={qn}");
             if (bangumi) apiBuilder.Append($"&module=bangumi&ep_id={epId}&session=");
             if (Config.COOKIE == "") apiBuilder.Append("&try_look=1");
@@ -81,7 +81,7 @@ public static partial class Parser
         StringBuilder paramBuilder = new();
         if (Config.TOKEN != "") paramBuilder.Append($"access_key={Config.TOKEN}&");
         paramBuilder.Append($"aid={aid}");
-        if (isBiliPlus) paramBuilder.Append($"&appkey=7d089525d3611b1c&area={(Config.AREA == "" ? "th" : Config.AREA)}");
+        if (isBiliPlus) paramBuilder.Append($"&appkey=7d089525d3611b1c");
         paramBuilder.Append($"&cid={cid}&ep_id={epId}&platform=android&prefer_code_type={code}&qn={qn}");
         if (isBiliPlus) paramBuilder.Append($"&ts={GetTimeStamp(true)}");
 
